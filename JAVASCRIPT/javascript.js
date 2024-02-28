@@ -51,3 +51,9 @@ console.log(mapeonum);
 numeros.forEach(num =>{
     console.log(num)
 });
+
+/*  Crear arreglos usando funciones(tipo flecha)
+    Usar metodos de arreglos y mostrar resultados
+    Para cada arreglo minimo un metodo
+    Usando el parametro(Callbackfn)
+*/
