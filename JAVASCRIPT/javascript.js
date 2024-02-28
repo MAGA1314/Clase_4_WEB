@@ -38,12 +38,12 @@ console.log(string);
 
 // 3) .map()
 let mapeo = string.map(pais =>{
-    return pais.concat(" hola")
+    return pais.concat(" hola");
 });
 console.log(mapeo);
 
 let mapeonum = numeros.map(numeros => {
-    return Math.pow(numeros,2)
+    return Math.pow(numeros,2);
 });
 console.log(mapeonum);
 
