@@ -68,36 +68,31 @@ const generarnumeros = (limite) => {
 };
 const generarnumeroshasta5 = generarnumeros(5);
 console.log(generarnumeroshasta5);
-
 // Filtrar los números entre 2 y 4
 const filternum = generarnumeroshasta5.filter((dato) => {
     return dato > 2 && dato < 4;
 });
 console.log('Números entre 2 y 4:', filternum);
-
 // Mapear arreglo generarnumeros para que saque el seno de cada numero
 let mapeogenerarnumeros = generarnumeroshasta5.map(generarnumeros => {
     return Math.sin(generarnumeros);
 });
 console.log('Seno de cada numero del arreglo',mapeogenerarnumeros);
-
-
 // Segundo Arreglo
 const generarArregloMixtoAscendente = (inicio, fin) => {
     return Array.from({ length: fin - inicio + 1 }, (_, index) => `Elemento ${inicio + index}`);
 };
 const arregloMixtoAscendente = generarArregloMixtoAscendente(1, 5);
 console.log('Arreglo mixto ascendente:', arregloMixtoAscendente);
+// Filtrar de la lista generarArreglosMixtosAscendente en elemeto 1
 console.log(arregloMixtoAscendente.filter(datos=>{
-    return datos.startsWith("men");
-}))
-/*
-let string = ["colombia", " brasil", "panama"]
-console.log(string.filter(datos=>{
-    return datos.startsWith("col");
+    return datos.startsWith("Elemento 1");
 }));
-console.log(string);
-*/ 
+// Mapear arreglomixtoascendente
+let mapeomixto = arregloMixtoAscendente.map(mapearmix =>{
+    return mapearmix.concat(' mapeado')
+});
+console.log(mapeomixto);
 
 // Tercer Arreglo
 const generarArregloMixtoDescendente = (inicio, fin) => {
@@ -105,7 +100,35 @@ const generarArregloMixtoDescendente = (inicio, fin) => {
 };
 const arregloMixtoDescendente = generarArregloMixtoDescendente(1, 5);
 console.log('Arreglo mixto descendente:', arregloMixtoDescendente);
+// Utilizar reduce para concatenar los elementos en una sola cadena
+const resultadoConcatenado = arregloMixtoDescendente.reduce((acumulador, elemento) => {
+    return acumulador + ' ' + elemento + " En arreglo | ";
+});
+console.log('Resultado concatenado:', resultadoConcatenado);
+// Utilizar forEach para calcular la suma de las longitudes de las cadenas
+let sumaLongitudes = 0;
+arregloMixtoDescendente.forEach(elemento => {
+    sumaLongitudes += elemento.length;
+});
+console.log('Suma de longitudes:', sumaLongitudes);
 
 // Cuarto Arreglo
-let generosPeliculas = ["accion", "comedia", "terror","drama"]
+let generosPeliculas = ["accion", "comedia", "terror","drama", "terror"]
 console.log(generosPeliculas)
+// Utilizarreduce para contar la cantidad de películas de cada género
+const conteoGeneros = generosPeliculas.reduce((contador, genero) => {
+    contador[genero] = (contador[genero] || 0) + 1;
+    return contador;
+},{});
+console.log('Conteo de películas por género:', conteoGeneros);
+// Utilizando forEach para calcular la longitud promedio de los nombres de géneros
+let longitudTotal = 0;
+generosPeliculas.forEach(genero => {
+    longitudTotal += genero.length;
+});
+const longitudPromedio = longitudTotal / generosPeliculas.length;
+console.log('Longitud promedio de nombres de géneros:', longitudPromedio);
+// 
+console.log(generosPeliculas.filter(datos=>{
+    return datos.startsWith("te");
+}));
